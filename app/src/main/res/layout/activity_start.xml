@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="登录"/>
+
+    <Button
+        android:id="@+id/btn_CanvasActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Canvas"/>
+
+    <Button
+        android:id="@+id/ScratchCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="投影图片和刮刮卡"/>
+
+    <Button
+        android:id="@+id/ImageEditActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ImageEdit"/>
+    <Button
+        android:id="@+id/VideoRecordActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="VideoRecordActivity"/>
+
+    <Button
+        android:id="@+id/slideActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="slideActivity"/>
+</LinearLayout>
