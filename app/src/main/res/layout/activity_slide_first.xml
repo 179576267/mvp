@@ -10,5 +10,13 @@
         android:layout_height="wrap_content"
         android:layout_margin="50dp"
         android:text="first"/>
+    
+    <com.wzf.mvpdemo.ui.widget.BannerView
+        android:id="@+id/banner_view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/black"
+        android:layout_below="@id/btn"></com.wzf.mvpdemo.ui.widget.BannerView>
+
 
 </RelativeLayout>

@@ -2,13 +2,18 @@ package com.wzf.mvpdemo.ui.activity.slide;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Looper;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.View;
 
 import com.r0adkll.slidr.Slidr;
 import com.r0adkll.slidr.model.SlidrConfig;
 import com.r0adkll.slidr.model.SlidrPosition;
 import com.wzf.mvpdemo.R;
+import com.wzf.mvpdemo.ui.Model.User;
+import com.wzf.mvpdemo.utils.eventbus.EventBus;
 
 /**
  * @Description:
@@ -39,5 +44,21 @@ public class SecondSlideActivity extends AppCompatActivity {
                 .distanceThreshold(.35f);
         mSlidrConfig = mBuilder.build();
         Slidr.attach(this, mSlidrConfig);
+
+        findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        EventBus.getDefault().post("SecondSlideActivity");
+                        User user = new User("wangzhenfei", 20);
+                        Log.i("EventBus", "send thread:-->>" + Thread.currentThread().getName());
+                        EventBus.getDefault().post(user);
+                    }
+                }).start();
+
+            }
+        });
     }
 }

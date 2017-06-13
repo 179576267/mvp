@@ -37,4 +37,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="slideActivity"/>
+
+    <Button
+        android:id="@+id/MediaRecorderActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="slideActivity"/>
+    <Button
+        android:id="@+id/EmojiActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="EmojiActivity"/>
 </LinearLayout>

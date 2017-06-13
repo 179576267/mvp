@@ -5,9 +5,8 @@ android {
     buildToolsVersion "23.0.1"
     defaultConfig {
         multiDexEnabled true
-        applicationId "com.douqu.order"
         minSdkVersion 14
-        targetSdkVersion 23
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
     }
@@ -42,12 +41,11 @@ dependencies {
     //动态权限
     compile 'com.werb.permissionschecker:permissionschecker:0.0.1-beta2'
     // eventBus 替代广播
-    compile 'de.greenrobot:eventbus:2.4.0'
-    compile "com.google.guava:guava:18.0"
-
+//    compile 'org.greenrobot:eventbus:3.0.0'
+    compile 'com.google.guava:guava:18.0'
     compile 'io.reactivex:rxjava:1.0.14'
     compile 'io.reactivex:rxandroid:1.0.1'
-
     //滑动切换Activity
     compile 'com.r0adkll:slidableactivity:2.0.3'
+    compile project(':video')
 }
