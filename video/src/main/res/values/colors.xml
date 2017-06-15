@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!--视频录制颜色-->
+    <color name="camera_bg">#0e1a2a</color>
+    <color name="camera_progress">#2980B9</color>
+    <color name="camera_progress_split">#041a2a</color>
+    <color name="camera_progress_three">#f33d39</color>
+    <color name="camera_progress_draw">#f33d39</color>
+    <color name="camera_progress_overflow">#1b5d89</color>
+    <color name="camera_theme_selected_bgcolor">#2980B9</color>
+    <color name="camera_bottom_press_bg">#1b1c1f</color>
+    <color name="title_background_color">#fcb840</color>
+    <color name="camera_progress_delete">#812C33</color>
+    <color name="text_incoming">#65c029</color>
+    <color name="bg_hang_up_incoming">#f63e28</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+</resources>
