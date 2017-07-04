@@ -42,10 +42,15 @@
         android:id="@+id/MediaRecorderActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="slideActivity"/>
+        android:text="MediaRecorderActivity"/>
     <Button
         android:id="@+id/EmojiActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="EmojiActivity"/>
+    <Button
+        android:id="@+id/SVGActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SVGActivity"/>
 </LinearLayout>
