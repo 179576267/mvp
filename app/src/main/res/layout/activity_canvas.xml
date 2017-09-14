@@ -25,5 +25,10 @@
         android:layout_marginTop="20dp"
         android:layout_gravity="center_horizontal"
         />
+    <com.wzf.mvpdemo.ui.activity.canvas.ui.MyTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/textUnchecked"/>
+
 
 </LinearLayout>

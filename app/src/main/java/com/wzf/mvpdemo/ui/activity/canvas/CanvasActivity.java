@@ -27,8 +27,8 @@ public class CanvasActivity extends Activity {
     private Paint paintArea;
     private Paint paintLine;
     private Paint paintText;
-    final int HEIGHT = 600;
-    final int WIDTH = 600;
+    final int HEIGHT = 300;
+    final int WIDTH = 300;
     private final int radius = WIDTH/2 - 50;
 
     @Override

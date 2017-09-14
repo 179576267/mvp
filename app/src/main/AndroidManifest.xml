@@ -51,6 +51,9 @@
         <activity android:name=".ui.activity.videorecord.VideoRecordActivity"></activity>
         <activity android:name=".ui.activity.emoji.EmojiActivity"></activity>
         <activity android:name=".ui.activity.svg.SVGActivity"></activity>
+        <activity android:name=".ui.activity.widget.ScrollIncludeListActivity"></activity>
+        <activity android:name=".ui.activity.widget.SlideMenuActivity"></activity>
+        <activity android:name=".ui.activity.banner.BannerActivity"></activity>
         <activity android:name=".ui.activity.slide.FirstSlideActivity" android:theme="@style/slideActivity"></activity>
         <activity android:name=".ui.activity.slide.SecondSlideActivity" android:theme="@style/slideActivity"></activity>
 

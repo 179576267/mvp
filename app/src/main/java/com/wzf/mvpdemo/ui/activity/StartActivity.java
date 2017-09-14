@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.wzf.mvpdemo.R;
+import com.wzf.mvpdemo.ui.activity.banner.BannerActivity;
 import com.wzf.mvpdemo.ui.activity.canvas.CanvasActivity;
 import com.wzf.mvpdemo.ui.activity.canvas.ImageEditActivity;
 import com.wzf.mvpdemo.ui.activity.canvas.ScratchCardActivity;
@@ -12,6 +13,7 @@ import com.wzf.mvpdemo.ui.activity.emoji.EmojiActivity;
 import com.wzf.mvpdemo.ui.activity.login.LogInActivity;
 import com.wzf.mvpdemo.ui.activity.slide.FirstSlideActivity;
 import com.wzf.mvpdemo.ui.activity.svg.SVGActivity;
+import com.wzf.mvpdemo.ui.activity.widget.ScrollIncludeListActivity;
 import com.wzf.mvpdemo.ui.activity.videorecord.VideoRecordActivity;
 import com.wzf.mvpdemo.ui.base.BaseActivity;
 import com.yixia.record.MediaRecorderActivity;
@@ -34,7 +36,8 @@ public class StartActivity extends BaseActivity {
     }
 
     @OnClick({R.id.btn_login, R.id.btn_CanvasActivity, R.id.ScratchCard, R.id.ImageEditActivity,
-            R.id.VideoRecordActivity, R.id.slideActivity, R.id.MediaRecorderActivity, R.id.EmojiActivity, R.id.SVGActivity})
+            R.id.VideoRecordActivity, R.id.slideActivity, R.id.MediaRecorderActivity, R.id.EmojiActivity, R.id.SVGActivity,
+    R.id.ScrollIncludeListActivity, R.id.BannerActivity})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_login:
@@ -63,6 +66,12 @@ public class StartActivity extends BaseActivity {
                 break;
             case R.id.SVGActivity:
                 startActivity(new Intent(this, SVGActivity.class));
+                break;
+            case R.id.ScrollIncludeListActivity:
+                startActivity(new Intent(this, ScrollIncludeListActivity.class));
+                break;
+            case R.id.BannerActivity:
+                startActivity(new Intent(this, BannerActivity.class));
                 break;
         }
     }
