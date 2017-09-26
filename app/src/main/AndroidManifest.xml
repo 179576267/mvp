@@ -54,6 +54,8 @@
         <activity android:name=".ui.activity.widget.ScrollIncludeListActivity"></activity>
         <activity android:name=".ui.activity.widget.SlideMenuActivity"></activity>
         <activity android:name=".ui.activity.banner.BannerActivity"></activity>
+        <activity android:name=".ui.activity.listslide.ListSlideActivity"></activity>
+        <activity android:name=".ui.activity.waterwave.MyWaterWaveActivity"></activity>
         <activity android:name=".ui.activity.slide.FirstSlideActivity" android:theme="@style/slideActivity"></activity>
         <activity android:name=".ui.activity.slide.SecondSlideActivity" android:theme="@style/slideActivity"></activity>
 

@@ -63,5 +63,15 @@
         android:id="@+id/BannerActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="BannerActivity"/>
+        android:text="自定义banner"/>
+    <Button
+        android:id="@+id/ListSlideActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="listview侧滑"/>
+    <Button
+        android:id="@+id/MyWaterWaveActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="水波纹"/>
 </LinearLayout>
