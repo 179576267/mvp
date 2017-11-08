@@ -17,8 +17,6 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
 public class LogInActivity extends BaseActivity implements LoginContract.View{
     private LoginContract.Presenter presenter;
     @Bind(R.id.rl_layout_log)
@@ -33,8 +31,11 @@ public class LogInActivity extends BaseActivity implements LoginContract.View{
         setContentView(R.layout.activity_in_log);
         ButterKnife.bind(this);
         initView();
+
         presenter = new LoginPresenter(this,this);
     }
+
+
 
     private void initView() {
         etAccountNum.setFilters(REGX.getFilters(REGX.REGX_MOBILE_INPUT));

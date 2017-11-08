@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.wzf.mvpdemo.ui.activity.banner.BannerView
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_marginTop="50dp"
+        android:layout_height="250dp">
+
+    </com.wzf.mvpdemo.ui.activity.banner.BannerView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="bottom"
+        android:textColor="@color/white"
+        android:background="@color/black"
+        android:gravity="center"/>
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="250dp"-->
+        <!--android:layout_marginTop="50dp">-->
+        <!--<android.support.v4.view.ViewPager-->
+            <!--android:id="@+id/vp"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
+        <!--</android.support.v4.view.ViewPager>-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="vertical"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:background="@color/transparent2"-->
+            <!--android:padding="5dp">-->
+            <!--<TextView-->
+                <!--android:id="@+id/tv_title"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="14sp"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:text="我发神经大佛寺奇偶"/>-->
+            <!--<LinearLayout-->
+                <!--android:id="@+id/ll_container"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="5dp"-->
+                <!--android:orientation="horizontal"-->
+                <!--android:layout_gravity="center_horizontal"></LinearLayout>-->
+        <!--</LinearLayout>-->
+    <!--</RelativeLayout>-->
+
+</LinearLayout>

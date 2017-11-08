@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.wzf.mvpdemo.ui.activity.widget.MyScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="附近肯德基佛sad积分是的覅酒叟ID积分偶记哦你手机偶记s"/>
+            
+            <ListView
+                android:id="@+id/lv"
+                android:layout_width="match_parent"
+                android:dividerHeight="1dp"
+                android:divider="@color/textColor"
+                android:layout_height="400dp"></ListView>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="附近肯德基佛sad积分是的覅酒叟ID积分偶记哦你手机偶记s"/>
+
+        </LinearLayout>
+    </com.wzf.mvpdemo.ui.activity.widget.MyScrollView>
+
+    <com.wzf.mvpdemo.ui.activity.widget.MyViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="#f00"
+            android:gravity="center_horizontal"
+            android:text="我是第一个View" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="#0f0"
+            android:gravity="center_horizontal"
+            android:text="我是第二个View" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="#00f"
+            android:gravity="center_horizontal"
+            android:text="我是第三个View" />
+
+    </com.wzf.mvpdemo.ui.activity.widget.MyViewPager>
+</LinearLayout>

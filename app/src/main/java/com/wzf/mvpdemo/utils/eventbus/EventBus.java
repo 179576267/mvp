@@ -23,7 +23,7 @@ public class EventBus {
     private Map<Object, CopyOnWriteArrayList<SubscriberMethod>> subscriptionMap;
     private Handler handler;
     private ExecutorService executorService;
-    private static EventBus instance;
+    private volatile static EventBus instance;
 
     private EventBus() {
         subscriptionMap = new HashMap<>();
