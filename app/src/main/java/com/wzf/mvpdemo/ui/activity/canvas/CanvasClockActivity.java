@@ -14,6 +14,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 import com.wzf.mvpdemo.R;
+import com.wzf.mvpdemo.ui.base.BaseActivity;
 
 
 /**
@@ -22,7 +23,7 @@ import com.wzf.mvpdemo.R;
  * @date: 2017-03-20 11:35
  */
 
-public class CanvasActivity extends Activity {
+public class CanvasClockActivity extends BaseActivity {
     private SurfaceHolder holder;
     private Paint paintArea;
     private Paint paintLine;

@@ -46,12 +46,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.bosspage.BossPageActivity" />
-        <activity android:name=".ui.activity.login.LogInActivity" />
-        <activity android:name=".ui.activity.canvas.CanvasActivity" />
+        <activity android:name=".ui.activity.canvas.CanvasClockActivity" />
         <activity android:name=".ui.activity.canvas.ScratchCardActivity" />
         <activity android:name=".ui.activity.canvas.ImageEditActivity" />
-        <activity android:name=".ui.activity.videorecord.VideoRecordActivity" />
+        <activity android:name=".ui.activity.canvas.CanvasMenuActivity" />
+        <activity android:name=".ui.activity.materialdesign.MaterialMenuActivity" />
+        <activity android:name=".ui.activity.materialdesign.ToolbarActivity" />
+        <activity android:name=".ui.activity.materialdesign.CoordinatorLayoutScrollActivity" />
+        <activity android:name=".ui.activity.materialdesign.CollapsingToolBarLayoutActivity" />
         <activity android:name=".ui.activity.emoji.EmojiActivity" />
         <activity android:name=".ui.activity.svg.SVGActivity" />
         <activity android:name=".ui.activity.widget.ScrollIncludeListActivity" />

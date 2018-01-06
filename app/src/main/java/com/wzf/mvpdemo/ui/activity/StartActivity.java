@@ -1,8 +1,6 @@
 package com.wzf.mvpdemo.ui.activity;
 
-import android.content.Intent;
 import android.graphics.PixelFormat;
-import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -11,27 +9,19 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.wzf.mvpdemo.MyApplication;
-import com.wzf.mvpdemo.R;
 import com.wzf.mvpdemo.ui.activity.banner.BannerActivity;
-import com.wzf.mvpdemo.ui.activity.canvas.CanvasActivity;
-import com.wzf.mvpdemo.ui.activity.canvas.ImageEditActivity;
-import com.wzf.mvpdemo.ui.activity.canvas.ScratchCardActivity;
+import com.wzf.mvpdemo.ui.activity.canvas.CanvasMenuActivity;
 import com.wzf.mvpdemo.ui.activity.emoji.EmojiActivity;
 import com.wzf.mvpdemo.ui.activity.listslide.ListSlideActivity;
-import com.wzf.mvpdemo.ui.activity.login.LogInActivity;
+import com.wzf.mvpdemo.ui.activity.materialdesign.MaterialMenuActivity;
 import com.wzf.mvpdemo.ui.activity.photoview.PhotoViewActivity;
-import com.wzf.mvpdemo.ui.activity.slide.FirstSlideActivity;
 import com.wzf.mvpdemo.ui.activity.svg.SVGActivity;
 import com.wzf.mvpdemo.ui.activity.waterwave.MyWaterWaveActivity;
 import com.wzf.mvpdemo.ui.activity.widget.ScrollIncludeListActivity;
-import com.wzf.mvpdemo.ui.activity.videorecord.VideoRecordActivity;
-import com.wzf.mvpdemo.ui.base.BaseActivity;
+import com.wzf.mvpdemo.ui.base.BaseMenuActivity;
 import com.yixia.record.MediaRecorderActivity;
 
 import java.util.ArrayList;
-
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
  * @Description:
@@ -39,18 +29,47 @@ import butterknife.OnClick;
  * @date: 2017-04-13 15:41
  */
 
-public class StartActivity extends BaseActivity {
+public class StartActivity extends BaseMenuActivity {
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_start);
-        ButterKnife.bind(this);
-        addWindowView();
+    public void init() {
+        addChild("悬浮窗", new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addWindowView();
+            }
+        });
+        addChild("自定义控件", CanvasMenuActivity.class);
+        addChild("Emoji表情", EmojiActivity.class);
+        addChild("SVG测试", SVGActivity.class);
+        addChild("小视频录制", new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MediaRecorderActivity.startMethod(StartActivity.this);
+            }
+        });
+        addChild("图片预览", new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ArrayList<String> urls = new ArrayList<>();
+                urls.add("http://pic.jj20.com/up/allimg/1011/110GG01327/1G10G01327-1.jpg");
+                urls.add("http://pic.jj20.com/up/allimg/1011/11051G30935/1G105130935-1.jpg");
+                urls.add("http://img.alicdn.com/bao/uploaded/i2/TB2wO3Et0BopuFjSZPcXXc9EpXa_!!409196487.jpg");
+                urls.add("http://img.alicdn.com/bao/uploaded/i3/TB2AGO0kxBmpuFjSZFsXXcXpFXa_!!1656188531.jpg");
+                urls.add("http://img.alicdn.com/bao/uploaded/i8/T2Q3oeXa0aXXXXXXXX_!!409196487.jpg");
+                urls.add("http://img.alicdn.com/bao/uploaded/i2/TB1DRvOQVXXXXX7XFXXXXXXXXXX_!!0-item_pic.jpg");
+                urls.add("http://img.alicdn.com/bao/uploaded/i4/TB1psr0QFXXXXbHXpXXXXXXXXXX_!!0-item_pic.jpg");
+                PhotoViewActivity.startMethod(StartActivity.this, 2, urls);
+            }
+        });
+
+        addChild("Material设计", MaterialMenuActivity.class);
+
     }
+
 
     private void addWindowView() {
         final Button button = new Button(MyApplication.getAppInstance());
-        button.setText("windowButton");
+        button.setText("悬浮窗");
         final WindowManager.LayoutParams mLayoutParams = new WindowManager.LayoutParams(WindowManager.LayoutParams.WRAP_CONTENT,
                 WindowManager.LayoutParams.WRAP_CONTENT, 0, 0, PixelFormat.TRANSLUCENT);
         mLayoutParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL |
@@ -115,65 +134,5 @@ public class StartActivity extends BaseActivity {
             }
         });
 
-    }
-
-    @OnClick({R.id.btn_login, R.id.btn_CanvasActivity, R.id.ScratchCard, R.id.ImageEditActivity,
-            R.id.VideoRecordActivity, R.id.slideActivity, R.id.MediaRecorderActivity, R.id.EmojiActivity, R.id.SVGActivity,
-    R.id.ScrollIncludeListActivity, R.id.BannerActivity, R.id.ListSlideActivity, R.id.MyWaterWaveActivity, R.id.PhotoViewActivity})
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.btn_login:
-                startActivity(new Intent(this, LogInActivity.class));
-                break;
-            case R.id.btn_CanvasActivity:
-                startActivity(new Intent(this, CanvasActivity.class));
-                break;
-            case R.id.ScratchCard:
-                startActivity(new Intent(this, ScratchCardActivity.class));
-                break;
-            case R.id.ImageEditActivity:
-                startActivity(new Intent(this, ImageEditActivity.class));
-                break;
-            case R.id.VideoRecordActivity:
-                startActivity(new Intent(this, VideoRecordActivity.class));
-                break;
-            case R.id.slideActivity:
-                startActivity(new Intent(this, FirstSlideActivity.class));
-                break;
-            case R.id.MediaRecorderActivity:
-                MediaRecorderActivity.startMethod(this);
-                break;
-            case R.id.EmojiActivity:
-                startActivity(new Intent(this, EmojiActivity.class));
-                break;
-            case R.id.SVGActivity:
-                startActivity(new Intent(this, SVGActivity.class));
-                break;
-            case R.id.ScrollIncludeListActivity:
-                startActivity(new Intent(this, ScrollIncludeListActivity.class));
-                break;
-            case R.id.BannerActivity:
-                startActivity(new Intent(this, BannerActivity.class));
-                break;
-            case R.id.ListSlideActivity:
-                startActivity(new Intent(this, ListSlideActivity.class));
-                break;
-            case R.id.MyWaterWaveActivity:
-                startActivity(new Intent(this, MyWaterWaveActivity.class));
-                break;
-            case R.id.PhotoViewActivity:
-                ArrayList<String> urls = new ArrayList<>();
-                urls.add("http://pic.jj20.com/up/allimg/1011/110GG01327/1G10G01327-1.jpg");
-                urls.add("http://pic.jj20.com/up/allimg/1011/11051G30935/1G105130935-1.jpg");
-                urls.add("http://img.alicdn.com/bao/uploaded/i2/TB2wO3Et0BopuFjSZPcXXc9EpXa_!!409196487.jpg");
-                urls.add("http://img.alicdn.com/bao/uploaded/i3/TB2AGO0kxBmpuFjSZFsXXcXpFXa_!!1656188531.jpg");
-                urls.add("http://img.alicdn.com/bao/uploaded/i8/T2Q3oeXa0aXXXXXXXX_!!409196487.jpg");
-                urls.add("http://img.alicdn.com/bao/uploaded/i2/TB1DRvOQVXXXXX7XFXXXXXXXXXX_!!0-item_pic.jpg");
-                urls.add("http://img.alicdn.com/bao/uploaded/i4/TB1psr0QFXXXXbHXpXXXXXXXXXX_!!0-item_pic.jpg");
-                PhotoViewActivity.startMethod(this, 2, urls);
-                break;
-            default:
-                break;
-        }
     }
 }

@@ -9,12 +9,13 @@ import android.widget.TextView;
 
 
 import com.wzf.mvpdemo.R;
+import com.wzf.mvpdemo.ui.base.BaseActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class PhotoViewActivity extends Activity{
+public class PhotoViewActivity extends BaseActivity{
 	private LinearLayout mRescoPhotoContainer;
 	private TextView mInstructionsPhotoNumberTv;
 	/****************************************/

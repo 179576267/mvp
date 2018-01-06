@@ -1,15 +1,16 @@
 package com.wzf.mvpdemo.ui.activity.materialdesign;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import com.wzf.mvpdemo.ui.base.BaseMenuActivity;
 
-import com.wzf.mvpdemo.R;
-
-public class MaterialMenuActivity extends AppCompatActivity {
+/**
+ * @author Administrator
+ */
+public class MaterialMenuActivity extends BaseMenuActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_material_menu);
+    public void init() {
+        addChild("Toolbar", ToolbarActivity.class);
+        addChild("CoordinatorLayout", CoordinatorLayoutScrollActivity.class);
+        addChild("CollapsingToolBarLayout", CollapsingToolBarLayoutActivity.class);
     }
 }
