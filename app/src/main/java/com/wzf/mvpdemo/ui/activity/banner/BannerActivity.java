@@ -34,7 +34,7 @@ public class BannerActivity extends BaseActivity {
             "http://inews.gtimg.com/newsapp_ls/0/2037911204/0",
             "http://inews.gtimg.com/newsapp_ls/0/2037923767/0",
             "http://inews.gtimg.com/newsapp_ls/0/2037689373/0",
-            "http://inews.gtimg.com/newsapp_ls/0/2021071327/0",
+//            "http://inews.gtimg.com/newsapp_ls/0/2021071327/0",
     };
 
 

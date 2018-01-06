@@ -28,7 +28,7 @@ public class CommonPageAdapter extends PagerAdapter {
 
 	@Override
 	public int getCount() {
-		return Integer.MAX_VALUE;
+		return views.size()== 1? 1 : Integer.MAX_VALUE;
 	}
 
 	public View getItemAtPosition(int position) {

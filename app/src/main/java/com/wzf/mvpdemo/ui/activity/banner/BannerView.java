@@ -1,6 +1,7 @@
 package com.wzf.mvpdemo.ui.activity.banner;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -17,6 +18,7 @@ import com.wzf.mvpdemo.R;
 import com.wzf.mvpdemo.utils.ScreenUtils;
 import com.wzf.mvpdemo.utils.imageloaderbyqueue.ImageLoader;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -66,7 +68,10 @@ public class BannerView extends RelativeLayout {
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        postDelayed(runnable, interval);
+        if(points.size() > 1){
+            postDelayed(runnable, interval);
+        }
+
     }
 
     private void init() {
@@ -90,48 +95,15 @@ public class BannerView extends RelativeLayout {
 
     private void initData() {
         List<View> views = new ArrayList<>();
-        for(int i = 0; i < infos.size(); i++){
-            BannerInfo info = infos.get(i);
-            ImageView im= new ImageView(mContext);
-            im.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            im.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-            ImageLoader.getInstance().loadImage(info.image, im);
-            im.setOnTouchListener(new View.OnTouchListener() {
-                @Override
-                public boolean onTouch(View v, MotionEvent event) {
-                    switch (event.getAction()){
-                        case MotionEvent.ACTION_DOWN:
-                           removeCallbacks(runnable);
-                            break;
-                        case MotionEvent.ACTION_UP:
-                            removeCallbacks(runnable);
-                            postDelayed(runnable, interval);
-                            break;
-                    }
-                    return false;
-                }
-            });
-            final int position = i;
-            im.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (pageClickListener != null){
-                        pageClickListener.onPageClick(position);
-                    }
-                }
-            });
-            TextView textView = new TextView(mContext);
-
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ScreenUtils.dip2px(mContext, 8),
-                    ScreenUtils.dip2px(mContext, 8));
-            if(i != 0){
-                params.setMargins(10, 0, 0, 0);
-            }
-            textView.setLayoutParams(params);
-            textView.setEnabled(false);
-            textView.setBackgroundResource(R.drawable.selector_banner_point);
-            points.add(textView);
-            llContainer.addView(textView);
+        final boolean isTwo = infos.size() == 2;
+        List<BannerInfo> infoList = new ArrayList<>();
+        infoList.addAll(infos);
+        if(isTwo){
+            infoList.addAll(infos);
+        }
+        for(int i = 0; i < infoList.size(); i++){
+            BannerInfo info = infoList.get(i);
+            ImageView im = getImageView(isTwo, i, info);
             views.add(im);
         }
         CommonPageAdapter pageAdapter = new CommonPageAdapter(views);
@@ -166,8 +138,64 @@ public class BannerView extends RelativeLayout {
                 }
             }
         });
-        int centerPosition = Integer.MAX_VALUE / 2 - Integer.MAX_VALUE / 2 % infos.size();
+        int centerPosition = Integer.MAX_VALUE / 2 - Integer.MAX_VALUE / 2 % infoList.size();
         vp.setCurrentItem(centerPosition);
+    }
+
+    @NonNull
+    private ImageView getImageView(final boolean isTwo, int i, BannerInfo info) {
+        ImageView im= new ImageView(mContext);
+        im.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        im.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        ImageLoader.getInstance().loadImage(info.image, im);
+        im.setOnTouchListener(new OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                       removeCallbacks(runnable);
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        removeCallbacks(runnable);
+                        postDelayed(runnable, interval);
+                        break;
+                }
+                return false;
+            }
+        });
+        final int position = i;
+        im.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (pageClickListener != null){
+                    pageClickListener.onPageClick(isTwo?position % 2 : position);
+                }
+            }
+        });
+        if(isTwo){
+            if(i < infos.size()){
+                addIndexBar(i, info);
+            }
+        }else {
+            addIndexBar(i, info);
+        }
+        return im;
+    }
+
+    private void addIndexBar(int i, BannerInfo info) {
+        TextView textView = new TextView(mContext);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ScreenUtils.dip2px(mContext, 8),
+                ScreenUtils.dip2px(mContext, 8));
+        if(i != 0){
+            params.setMargins(10, 0, 0, 0);
+        }else{
+            tvTitle.setText(info.title);
+        }
+        textView.setLayoutParams(params);
+        textView.setEnabled(false);
+        textView.setBackgroundResource(R.drawable.selector_banner_point);
+        points.add(textView);
+        llContainer.addView(textView);
     }
 
     @Override
