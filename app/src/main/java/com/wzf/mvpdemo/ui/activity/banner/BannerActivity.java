@@ -1,6 +1,7 @@
 package com.wzf.mvpdemo.ui.activity.banner;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import com.wzf.mvpdemo.MyApplication;
@@ -58,4 +59,8 @@ public class BannerActivity extends BaseActivity {
         });
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 }

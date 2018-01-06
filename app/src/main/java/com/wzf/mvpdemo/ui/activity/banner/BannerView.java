@@ -60,7 +60,13 @@ public class BannerView extends RelativeLayout {
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
-        //getChildAt(0);
+
+    }
+
+    @Override
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        postDelayed(runnable, interval);
     }
 
     private void init() {
@@ -162,7 +168,12 @@ public class BannerView extends RelativeLayout {
         });
         int centerPosition = Integer.MAX_VALUE / 2 - Integer.MAX_VALUE / 2 % infos.size();
         vp.setCurrentItem(centerPosition);
-        postDelayed(runnable, interval);
+    }
+
+    @Override
+    protected void onDetachedFromWindow() {
+        removeCallbacks(runnable);
+        super.onDetachedFromWindow();
     }
 
     public static class BannerInfo{
