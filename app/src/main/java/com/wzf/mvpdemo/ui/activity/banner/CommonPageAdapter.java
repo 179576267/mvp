@@ -53,4 +53,15 @@ public class CommonPageAdapter extends PagerAdapter {
 		return arg0 == arg1;
 	}
 
+	/**
+	 * 描述：很重要，否则不能notifyDataSetChanged.
+	 *
+	 * @param object the object
+	 * @return the item position
+	 * @see PagerAdapter#getItemPosition(Object)
+	 */
+	@Override
+	public int getItemPosition(Object object) {
+		return POSITION_NONE;
+	}
 }

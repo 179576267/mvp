@@ -2,11 +2,13 @@ package com.wzf.mvpdemo.ui.activity.banner;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.wzf.mvpdemo.MyApplication;
 import com.wzf.mvpdemo.R;
 import com.wzf.mvpdemo.ui.base.BaseActivity;
+import com.wzf.mvpdemo.utils.imageloaderbyqueue.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +25,8 @@ import butterknife.ButterKnife;
 public class BannerActivity extends BaseActivity {
     @Bind(R.id.banner)
     BannerView banner;
+    @Bind(R.id.im)
+    ImageView im;
     public String[] titles = new String[]{
             "湖人12月19日退役科比球衣 8号24号同时升空",
             "“老司机”带你飞 这些球员来到小牛后迈向成功",
@@ -34,7 +38,7 @@ public class BannerActivity extends BaseActivity {
     public String[] images = new String[]{
             "http://inews.gtimg.com/newsapp_ls/0/2037911204/0",
             "http://inews.gtimg.com/newsapp_ls/0/2037923767/0",
-            "http://inews.gtimg.com/newsapp_ls/0/2037689373/0",
+            "http://123.206.27.105:180/resource//IMAGE/ad/2016/10/17/1476691921038_209.png",
 //            "http://inews.gtimg.com/newsapp_ls/0/2021071327/0",
 //            "http://inews.gtimg.com/newsapp_ls/0/2021071327/0",
     };
@@ -49,6 +53,7 @@ public class BannerActivity extends BaseActivity {
     }
 
     private void init() {
+//        banner.setNoTitleMode(true);
         final List<BannerView.BannerInfo> infos = new ArrayList<>();
         for(int i = 0; i < images.length; i++){
             infos.add(new BannerView.BannerInfo(titles[i], images[i]));
@@ -59,6 +64,8 @@ public class BannerActivity extends BaseActivity {
                 showToast(infos.get(position).title);
             }
         });
+
+        ImageLoader.getInstance().loadImage("http://123.206.27.105:180/resource//IMAGE/ad/2016/10/17/1476691921038_209.png", im);
     }
 
     @Override
