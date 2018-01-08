@@ -3,6 +3,7 @@ package com.wzf.mvpdemo.ui.activity.banner;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.view.ViewGroup;
 
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class CommonPageAdapter extends PagerAdapter {
 	@Override
 	public void destroyItem(View container, int position, Object object) {
 		// 将指定的view从viewPager中移除
-		((ViewPager) container).removeView(views.get(position % views.size()));
+//		((ViewPager) container).removeView(views.get(position % views.size()));
 	}
 
 	@Override
@@ -38,8 +39,13 @@ public class CommonPageAdapter extends PagerAdapter {
 	@Override
 	public Object instantiateItem(View container, int position) {
 		// 将view添加到viewPager中
-		((ViewPager) container).addView(views.get(position % views.size()));
-		return views.get(position % views.size());
+		View v=views.get(position % views.size());
+		ViewGroup parent = (ViewGroup) v.getParent();
+		if (parent != null) {
+			parent.removeView(v);
+		}
+		((ViewPager) container).addView(v);
+		return v;
 	}
 
 	@Override

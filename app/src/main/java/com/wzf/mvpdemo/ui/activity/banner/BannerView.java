@@ -153,7 +153,7 @@ public class BannerView extends RelativeLayout {
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()){
                     case MotionEvent.ACTION_DOWN:
-                       removeCallbacks(runnable);
+                        removeCallbacks(runnable);
                         break;
                     case MotionEvent.ACTION_UP:
                         removeCallbacks(runnable);

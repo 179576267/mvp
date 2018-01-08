@@ -27,13 +27,15 @@ public class BannerActivity extends BaseActivity {
             "湖人12月19日退役科比球衣 8号24号同时升空",
             "“老司机”带你飞 这些球员来到小牛后迈向成功",
             "巴恩斯违法为为范文芳",
-            "一种篮球，两种打发",
+//            "一种篮球，两种打发",
+//            "一种篮球，两种打发",
     };
 
     public String[] images = new String[]{
             "http://inews.gtimg.com/newsapp_ls/0/2037911204/0",
             "http://inews.gtimg.com/newsapp_ls/0/2037923767/0",
             "http://inews.gtimg.com/newsapp_ls/0/2037689373/0",
+//            "http://inews.gtimg.com/newsapp_ls/0/2021071327/0",
 //            "http://inews.gtimg.com/newsapp_ls/0/2021071327/0",
     };
 
