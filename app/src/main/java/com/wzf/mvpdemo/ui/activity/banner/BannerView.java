@@ -196,7 +196,7 @@ public class BannerView extends RelativeLayout {
     private ImageView getImageView(final boolean isTwo, int i, BannerInfo info) {
         ImageView im= new ImageView(mContext);
         im.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        im.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        im.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         ImageLoader.getInstance().loadImage(info.image, im);
         im.setOnTouchListener(new OnTouchListener() {
             @Override

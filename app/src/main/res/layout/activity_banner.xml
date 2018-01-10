@@ -6,7 +6,7 @@
         android:id="@+id/banner"
         android:layout_width="match_parent"
         android:layout_marginTop="50dp"
-        android:layout_height="200dp">
+        android:layout_height="135dp">
     </com.wzf.mvpdemo.ui.activity.banner.BannerView>
 
     <ImageView
