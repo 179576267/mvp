@@ -62,6 +62,7 @@
         <activity android:name=".ui.activity.listslide.ListSlideActivity" />
         <activity android:name=".ui.activity.waterwave.MyWaterWaveActivity" />
         <activity android:name=".ui.activity.photoview.PhotoViewActivity" />
+        <activity android:name=".ui.activity.pay.AliPayActivity" />
         <activity
             android:name=".ui.activity.slide.FirstSlideActivity"
             android:theme="@style/slideActivity" />
@@ -77,7 +78,6 @@
         <activity
             android:name="com.yixia.record.VideoPlayerActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.materialdesign.MaterialMenuActivity"></activity>
     </application>
 
 </manifest>

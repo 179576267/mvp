@@ -14,6 +14,7 @@ import com.wzf.mvpdemo.ui.activity.canvas.CanvasMenuActivity;
 import com.wzf.mvpdemo.ui.activity.emoji.EmojiActivity;
 import com.wzf.mvpdemo.ui.activity.listslide.ListSlideActivity;
 import com.wzf.mvpdemo.ui.activity.materialdesign.MaterialMenuActivity;
+import com.wzf.mvpdemo.ui.activity.pay.AliPayActivity;
 import com.wzf.mvpdemo.ui.activity.photoview.PhotoViewActivity;
 import com.wzf.mvpdemo.ui.activity.svg.SVGActivity;
 import com.wzf.mvpdemo.ui.activity.waterwave.MyWaterWaveActivity;
@@ -63,6 +64,7 @@ public class StartActivity extends BaseMenuActivity {
         });
 
         addChild("Material设计", MaterialMenuActivity.class);
+        addChild("支付", AliPayActivity.class);
 
     }
 
